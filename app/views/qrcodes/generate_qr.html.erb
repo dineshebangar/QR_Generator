@@ -1,0 +1,218 @@
+<html><head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link type="text/css" rel="stylesheet" href="/Generator.css">
+    <title>QR Code Generator Project:</title>
+    <script type="text/javascript" language="javascript" src="/generator/generator.nocache.js"></script><script defer="defer">generator.onInjectionDone('generator')</script>
+  <link rel="stylesheet" href="http://zxing.appspot.com/generator/gwt/clean/clean.css"></head>
+  <body>
+    <iframe src="javascript:''" id="__gwt_historyFrame" tabindex="-1" style="position:absolute;width:0;height:0;border:0"></iframe>
+    <noscript>
+      &lt;div style="width: 22em; position: absolute; left: 50%; margin-left: -11em; color: red; background-color: white; border: 1px solid red; padding: 4px; font-family: sans-serif"&gt;
+        Your web browser must have JavaScript enabled
+        in order for this application to display correctly.
+      &lt;/div&gt;
+    </noscript>
+
+    <div id="header">
+      <h1>QR Code Generator <span>from the ZXing Project</span></h1>
+    </div>
+
+    <div id="ui">
+      <table cellspacing="0" cellpadding="0" id="mainpanel"><tbody>
+        <tr>
+          <td align="left" style="vertical-align: top;">
+            <table id="leftpanel">
+              <colgroup>
+              <col></colgroup>
+              <tbody>
+                <tr>
+                  <td>
+                    <table>
+                      <colgroup>
+                      <col class="firstColumn">
+                      <col class="secondColumn">
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <td class="firstColumn">Contents</td>
+                        <td class="secondColumn">
+                          <%= select_tag "list_box", "<option value='Calendar event'>Calendar event</option><option value='Contact information'>Contact information</option><option value='Email address'>Email address</option><option value='Geo location'>Geo location</option><option value='Phone number'>Phone number</option><option value='SMS'>SMS</option><option value='Text'>Text</option><option value='URL'>URL</option><option value='Wifi network'>Wifi network</option>".html_safe ,:id=>"list"%>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <table>
+                    <colgroup>
+                    <col class="firstColumn">
+                    <col class="secondColumn">
+                  </colgroup>
+      <tbody>
+        <tr>
+          <td class="firstColumn" >Name</td>
+          <td class="secondColumn">
+            <input type="text" class="gwt-TextBox required" id="qr_name">
+          </td>
+          </tr>
+          <tr>
+            <td class="firstColumn">Company</td>
+            <td class="secondColumn">
+              <input type="text" class="gwt-TextBox" id="qr_company"></td>
+            </tr>
+            <tr>
+              <td class="firstColumn">Title</td>
+              <td class="secondColumn">
+                <input type="text" class="gwt-TextBox" id="qr_title">
+              </td>
+            </tr>
+            <tr>
+              <td class="firstColumn">Phone number</td>
+              <td class="secondColumn">
+                <input type="text" class="gwt-TextBox" id="qr_phone">
+              </td>
+            </tr>
+            <tr>
+              <td class="firstColumn">Email</td>
+              <td class="secondColumn">
+                <input type="text" class="gwt-TextBox" id="qr_email">
+              </td>
+            </tr>
+            <tr>
+              <td class="firstColumn">Address</td>
+              <td class="secondColumn">
+                <input type="text" class="gwt-TextBox" id="qr_addr">
+              </td>
+            </tr>
+            <tr>
+              <td class="firstColumn">Address 2</td>
+              <td class="secondColumn">
+                <input type="text" class="gwt-TextBox" id="qr_addr2">
+              </td>
+            </tr>
+            <tr>
+              <td class="firstColumn">Website</td>
+              <td class="secondColumn">
+                <input type="text" class="gwt-TextBox" id="qr_site">
+              </td>
+            </tr>
+            <tr>
+              <td class="firstColumn">Memo</td>
+              <td class="secondColumn">
+                <input type="text" class="gwt-TextBox" id="qr_memo">
+              </td>
+            </tr>
+            <!-- <tr>
+              <td class="firstColumn">Encoding</td>
+              <td class="secondColumn">
+                <%#= select_tag "gwt-ListBox","<option value='MECARD'>MECARD</option><option value='vCard'>vCard</option>".html_safe%>
+              </td>
+            </tr> -->
+          </tbody>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td><span id="errorMessageID" class="errorMessage">&nbsp;</span></td>
+    </tr>
+    <tr>
+      <td>
+        <table>
+          <colgroup><col class="firstColumn"><col class="secondColumn">
+        </colgroup>
+        <tbody>
+          <tr>
+            <td class="firstColumn">Barcode size</td>
+            <td class="secondColumn">
+              <%= select_tag "bar_size","<option value='6'>select</option><option value='6'>Small</option><option value='8'>Medium</option><option value='10'>Large</option>".html_safe,:id=>"bar_size"%>
+              
+            </td>
+          </tr>
+          <tr>
+            <td class="firstColumn">Error correction</td>
+            <td class="secondColumn">
+              <select class="gwt-ListBox">
+                <option value="L">L</option>
+                <option value="M">M</option>
+                <option value="Q">Q</option>
+                <option value="H">H</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td class="firstColumn">Character encoding</td>
+
+            <td class="secondColumn">
+              <select class="gwt-ListBox">
+                <option value="UTF-8">UTF-8</option>
+                <option value="ISO-8859-1">ISO-8859-1</option>
+                <option value="Shift_JIS">Shift_JIS</option>
+              </select>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <table><colgroup><col class="firstColumn"><col class="secondColumn"></colgroup>
+        <tbody>
+          <tr>
+            <td class="firstColumn">&nbsp;</td>
+          <td class="secondColumn">
+      <button type="button" class="gwt-Button" id="generate_img">Generate →</button>
+    </td>
+  </tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table></td><td align="left" style="vertical-align: top;">
+  
+  <div id="qr_image">
+
+  </div>  
+     
+    </table>
+  </td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    
+  
+
+<iframe src="javascript:''" id="generator" tabindex="-1" style="position: absolute; width: 0px; height: 0px; border: none;"></iframe></body></html>
+
+<script type="text/javascript">
+  $('#generate_img').click(function(){
+  
+  var qr_data = $("#list").val() + "=>"
+  if($("#qr_name").val()!= ""){ qr_data = qr_data + " " + "name:" + $("#qr_name").val()}
+  if($("#qr_phone").val()!= ""){ qr_data = qr_data + " ," + "phone:" + $("#qr_phone").val()}
+  if($("#qr_company").val()!= ""){ qr_data = qr_data + " ," + "company:" + $("#qr_company").val()}
+  if($("#qr_email").val()!= ""){ qr_data = qr_data + ", " + "Email:" + $("#qr_email").val()}
+  if($("#qr_title").val()!= ""){ qr_data = qr_data + ", " + "title:" + $("#qr_title").val()}
+  if($("#qr_memo").val()!= ""){ qr_data = qr_data + " ," + "memo:" + $("#qr_memo").val()}
+  if($("#qr_addr").val()!= ""){ qr_data = qr_data + ", " + "addr:" + $("#qr_addr").val()}
+  if($("#qr_addr2").val()!= ""){ qr_data = qr_data + ", " + "addr2:" + $("#qr_addr2").val()}
+  if($("#qr_site").val()!= ""){ qr_data = qr_data + " " + "web_site:" + $("#qr_site").val()}
+
+  qr_data = { "qr_data": qr_data , "size": $("#bar_size").val()}    
+
+
+  $.ajax({
+  url: 'generate_img',
+  type: 'get',
+  data: qr_data,
+  success: function(data,event,xhr) {      
+      
+  }
+  });
+  });
+</script>

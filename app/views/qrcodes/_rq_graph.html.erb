@@ -1,0 +1,15 @@
+<p><%= @qr_data%></p>
+<table cellspacing="0" cellpadding="0">
+	<tbody>
+          <tr>
+            <td align="left" style="vertical-align: top;">
+				<%#= render_qr_code(@qr_data) %>
+			
+			<div id="innerresult">
+                  <img src="" class="gwt-Image" aria-hidden="true">
+                  <%= render_qr_code(@qr_data,@size.to_i) %>
+                </div>
+            </td>    	
+		  </tr>
+	</tbody>	  		
+</table>
