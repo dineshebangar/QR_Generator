@@ -1,23 +1,21 @@
 <html><head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <link type="text/css" rel="stylesheet" href="/Generator.css">
-    <title>QR Code Generator Project:</title>
+    <title>QR Code Generator </title>
     <script type="text/javascript" language="javascript" src="/generator/generator.nocache.js"></script><script defer="defer">generator.onInjectionDone('generator')</script>
   <link rel="stylesheet" href="http://zxing.appspot.com/generator/gwt/clean/clean.css"></head>
   <body>
     <iframe src="javascript:''" id="__gwt_historyFrame" tabindex="-1" style="position:absolute;width:0;height:0;border:0"></iframe>
-    <noscript>
-      &lt;div style="width: 22em; position: absolute; left: 50%; margin-left: -11em; color: red; background-color: white; border: 1px solid red; padding: 4px; font-family: sans-serif"&gt;
-        Your web browser must have JavaScript enabled
-        in order for this application to display correctly.
-      &lt;/div&gt;
-    </noscript>
+    
 
     <div id="header">
-      <h1>QR Code Generator <span>from the ZXing Project</span></h1>
+      <h1>QR Code Generator </h1>
     </div>
 
     <div id="ui">
+      <div class="secondColumn">
+      <h3>Contact information:</h3>
+    </div>
       <table cellspacing="0" cellpadding="0" id="mainpanel"><tbody>
         <tr>
           <td align="left" style="vertical-align: top;">
@@ -32,14 +30,14 @@
                       <col class="firstColumn">
                       <col class="secondColumn">
                     </colgroup>
-                    <tbody>
-                      <tr>
-                        <td class="firstColumn">Contents</td>
+                    <!-- <tbody> -->
+                      <!-- <tr> -->
+                        <!-- <td class="firstColumn">Contents</td>
                         <td class="secondColumn">
-                          <%= select_tag "list_box", "<option value='Calendar event'>Calendar event</option><option value='Contact information'>Contact information</option><option value='Email address'>Email address</option><option value='Geo location'>Geo location</option><option value='Phone number'>Phone number</option><option value='SMS'>SMS</option><option value='Text'>Text</option><option value='URL'>URL</option><option value='Wifi network'>Wifi network</option>".html_safe ,:id=>"list"%>
-                        </td>
-                      </tr>
-                    </tbody>
+                          <%#= select_tag "list_box", "<option value='Calendar event'>Calendar event</option><option value='Contact information'>Contact information</option><option value='Email address'>Email address</option><option value='Geo location'>Geo location</option><option value='Phone number'>Phone number</option><option value='SMS'>SMS</option><option value='Text'>Text</option><option value='URL'>URL</option><option value='Wifi network'>Wifi network</option>".html_safe ,:id=>"list"%>
+                        </td> -->
+                      <!-- </tr> -->
+                    <!-- </tbody> -->
                   </table>
                 </td>
               </tr>
@@ -130,7 +128,7 @@
               
             </td>
           </tr>
-          <tr>
+          <!-- <tr>
             <td class="firstColumn">Error correction</td>
             <td class="secondColumn">
               <select class="gwt-ListBox">
@@ -140,8 +138,8 @@
                 <option value="H">H</option>
               </select>
             </td>
-          </tr>
-          <tr>
+          </tr> -->
+          <!-- <tr>
             <td class="firstColumn">Character encoding</td>
 
             <td class="secondColumn">
@@ -151,7 +149,7 @@
                 <option value="Shift_JIS">Shift_JIS</option>
               </select>
             </td>
-          </tr>
+          </tr> -->
         </tbody>
       </table>
     </td>
@@ -192,18 +190,32 @@
 <script type="text/javascript">
   $('#generate_img').click(function(){
   
-  var qr_data = $("#list").val() + "=>"
-  if($("#qr_name").val()!= ""){ qr_data = qr_data + " " + "name:" + $("#qr_name").val()}
-  if($("#qr_phone").val()!= ""){ qr_data = qr_data + " ," + "phone:" + $("#qr_phone").val()}
-  if($("#qr_company").val()!= ""){ qr_data = qr_data + " ," + "company:" + $("#qr_company").val()}
-  if($("#qr_email").val()!= ""){ qr_data = qr_data + ", " + "Email:" + $("#qr_email").val()}
-  if($("#qr_title").val()!= ""){ qr_data = qr_data + ", " + "title:" + $("#qr_title").val()}
-  if($("#qr_memo").val()!= ""){ qr_data = qr_data + " ," + "memo:" + $("#qr_memo").val()}
-  if($("#qr_addr").val()!= ""){ qr_data = qr_data + ", " + "addr:" + $("#qr_addr").val()}
-  if($("#qr_addr2").val()!= ""){ qr_data = qr_data + ", " + "addr2:" + $("#qr_addr2").val()}
-  if($("#qr_site").val()!= ""){ qr_data = qr_data + " " + "web_site:" + $("#qr_site").val()}
+  // var qr_data = $("#list").val() + "=>"
+  // if($("#qr_name").val()!= ""){ qr_data = qr_data + " " + "name:" + $("#qr_name").val()}
+  // if($("#qr_phone").val()!= ""){ qr_data = qr_data + " ," + "phone:" + $("#qr_phone").val()}
+  // if($("#qr_company").val()!= ""){ qr_data = qr_data + " ," + "company:" + $("#qr_company").val()}
+  // if($("#qr_email").val()!= ""){ qr_data = qr_data + ", " + "Email:" + $("#qr_email").val()}
+  // if($("#qr_title").val()!= ""){ qr_data = qr_data + ", " + "title:" + $("#qr_title").val()}
+  // if($("#qr_memo").val()!= ""){ qr_data = qr_data + " ," + "memo:" + $("#qr_memo").val()}
+  // if($("#qr_addr").val()!= ""){ qr_data = qr_data + ", " + "addr:" + $("#qr_addr").val()}
+  // if($("#qr_addr2").val()!= ""){ qr_data = qr_data + ", " + "addr2:" + $("#qr_addr2").val()}
+  // if($("#qr_site").val()!= ""){ qr_data = qr_data + " " + "web_site:" + $("#qr_site").val()}
 
-  qr_data = { "qr_data": qr_data , "size": $("#bar_size").val()}    
+  // qr_data = { "qr_data": qr_data , "size": $("#bar_size").val()}  
+
+
+  var qr_data = ""
+  if($("#qr_name").val()!= ""){ qr_data = qr_data +  $("#qr_name").val()}
+  if($("#qr_phone").val()!= ""){ qr_data = qr_data +  $("#qr_phone").val()}
+  if($("#qr_company").val()!= ""){ qr_data = qr_data +  $("#qr_company").val()}
+  if($("#qr_email").val()!= ""){ qr_data = qr_data +  $("#qr_email").val()}
+  if($("#qr_title").val()!= ""){ qr_data = qr_data +  $("#qr_title").val()}
+  if($("#qr_memo").val()!= ""){ qr_data = qr_data +  $("#qr_memo").val()}
+  if($("#qr_addr").val()!= ""){ qr_data = qr_data +  $("#qr_addr").val()}
+  if($("#qr_addr2").val()!= ""){ qr_data = qr_data +  $("#qr_addr2").val()}
+  if($("#qr_site").val()!= ""){ qr_data = qr_data +  $("#qr_site").val()}
+
+  qr_data = { "qr_data": qr_data , "size": $("#bar_size").val()}  
 
 
   $.ajax({
