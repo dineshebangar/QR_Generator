@@ -1,18 +1,14 @@
- <!-- <p><%#= @qr_data%></p> -->
-<table cellspacing="0" cellpadding="0">
-	<tbody>
-          <tr>
-            <td align="left" style="vertical-align: top;">
-				<%#= render_qr_code(@qr_data) %>
-			
-			<div id="innerresult">
-                  <img src="" class="gwt-Image" aria-hidden="true">
-                  <!-- kit = IMGKit.new(html, :quality => 50) -->
-                  <%#binding.pry%>
-                  <%#= img= IMGKit.new(render_qr_code(@qr_data,@size.to_i)) %>
-                  <%= render_qr_code(@qr_data,@size.to_i) %>
-                </div>
-            </td>    	
-		  </tr>
-	</tbody>	  		
-</table>
+<style>
+.center {
+    margin: auto;
+     padding-left: 150px;
+}
+</style>
+
+ 
+<div style="width:550px;background:rgb(221, 227, 233);">
+  <div class="center" id="innerresult" style="width:250px;padding-left: 80px;">
+	<%= render_qr_code(@qr_data,@size.to_i) %>
+  </div>
+</div>
+          
