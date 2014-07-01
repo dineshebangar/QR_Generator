@@ -7,6 +7,9 @@
 			
 			<div id="innerresult">
                   <img src="" class="gwt-Image" aria-hidden="true">
+                  <!-- kit = IMGKit.new(html, :quality => 50) -->
+                  <%#binding.pry%>
+                  <%#= img= IMGKit.new(render_qr_code(@qr_data,@size.to_i)) %>
                   <%= render_qr_code(@qr_data,@size.to_i) %>
                 </div>
             </td>    	

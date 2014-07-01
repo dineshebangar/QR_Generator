@@ -8,6 +8,9 @@ gem "twitter-bootstrap-rails"
 gem 'rqrcode'
 gem 'pry'
 
+gem 'imgkit', '~> 1.4.1'
+gem 'wkhtmltopdf', '~> 0.1.2'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 

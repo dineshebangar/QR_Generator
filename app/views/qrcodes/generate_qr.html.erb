@@ -190,32 +190,32 @@
 <script type="text/javascript">
   $('#generate_img').click(function(){
   
-  // var qr_data = $("#list").val() + "=>"
-  // if($("#qr_name").val()!= ""){ qr_data = qr_data + " " + "name:" + $("#qr_name").val()}
-  // if($("#qr_phone").val()!= ""){ qr_data = qr_data + " ," + "phone:" + $("#qr_phone").val()}
-  // if($("#qr_company").val()!= ""){ qr_data = qr_data + " ," + "company:" + $("#qr_company").val()}
-  // if($("#qr_email").val()!= ""){ qr_data = qr_data + ", " + "Email:" + $("#qr_email").val()}
-  // if($("#qr_title").val()!= ""){ qr_data = qr_data + ", " + "title:" + $("#qr_title").val()}
-  // if($("#qr_memo").val()!= ""){ qr_data = qr_data + " ," + "memo:" + $("#qr_memo").val()}
-  // if($("#qr_addr").val()!= ""){ qr_data = qr_data + ", " + "addr:" + $("#qr_addr").val()}
-  // if($("#qr_addr2").val()!= ""){ qr_data = qr_data + ", " + "addr2:" + $("#qr_addr2").val()}
-  // if($("#qr_site").val()!= ""){ qr_data = qr_data + " " + "web_site:" + $("#qr_site").val()}
-
-  // qr_data = { "qr_data": qr_data , "size": $("#bar_size").val()}  
-
-
-  var qr_data = ""
-  if($("#qr_name").val()!= ""){ qr_data = qr_data +  $("#qr_name").val()}
-  if($("#qr_phone").val()!= ""){ qr_data = qr_data +  $("#qr_phone").val()}
-  if($("#qr_company").val()!= ""){ qr_data = qr_data +  $("#qr_company").val()}
-  if($("#qr_email").val()!= ""){ qr_data = qr_data +  $("#qr_email").val()}
-  if($("#qr_title").val()!= ""){ qr_data = qr_data +  $("#qr_title").val()}
-  if($("#qr_memo").val()!= ""){ qr_data = qr_data +  $("#qr_memo").val()}
-  if($("#qr_addr").val()!= ""){ qr_data = qr_data +  $("#qr_addr").val()}
-  if($("#qr_addr2").val()!= ""){ qr_data = qr_data +  $("#qr_addr2").val()}
-  if($("#qr_site").val()!= ""){ qr_data = qr_data +  $("#qr_site").val()}
+  var qr_data = " "
+  if($("#qr_name").val()!= ""){ qr_data = qr_data + " " + "name:" + $("#qr_name").val()}
+  if($("#qr_phone").val()!= ""){ qr_data = qr_data + " ," + "phone:" + $("#qr_phone").val()}
+  if($("#qr_company").val()!= ""){ qr_data = qr_data + " ," + "company:" + $("#qr_company").val()}
+  if($("#qr_email").val()!= ""){ qr_data = qr_data + ", " + "Email:" + $("#qr_email").val()}
+  if($("#qr_title").val()!= ""){ qr_data = qr_data + ", " + "title:" + $("#qr_title").val()}
+  if($("#qr_memo").val()!= ""){ qr_data = qr_data + " ," + "memo:" + $("#qr_memo").val()}
+  if($("#qr_addr").val()!= ""){ qr_data = qr_data + ", " + "addr:" + $("#qr_addr").val()}
+  if($("#qr_addr2").val()!= ""){ qr_data = qr_data + ", " + "addr2:" + $("#qr_addr2").val()}
+  if($("#qr_site").val()!= ""){ qr_data = qr_data + " " + "web_site:" + $("#qr_site").val()}
 
   qr_data = { "qr_data": qr_data , "size": $("#bar_size").val()}  
+
+
+  // var qr_data = ""
+  // if($("#qr_name").val()!= ""){ qr_data = qr_data +  $("#qr_name").val()}
+  // if($("#qr_phone").val()!= ""){ qr_data = qr_data +  $("#qr_phone").val()}
+  // if($("#qr_company").val()!= ""){ qr_data = qr_data +  $("#qr_company").val()}
+  // if($("#qr_email").val()!= ""){ qr_data = qr_data +  $("#qr_email").val()}
+  // if($("#qr_title").val()!= ""){ qr_data = qr_data +  $("#qr_title").val()}
+  // if($("#qr_memo").val()!= ""){ qr_data = qr_data +  $("#qr_memo").val()}
+  // if($("#qr_addr").val()!= ""){ qr_data = qr_data +  $("#qr_addr").val()}
+  // if($("#qr_addr2").val()!= ""){ qr_data = qr_data +  $("#qr_addr2").val()}
+  // if($("#qr_site").val()!= ""){ qr_data = qr_data +  $("#qr_site").val()}
+
+  // qr_data = { "qr_data": qr_data , "size": $("#bar_size").val()}  
 
 
   $.ajax({
