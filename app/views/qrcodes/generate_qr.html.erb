@@ -43,7 +43,7 @@
                   </colgroup>
       <!-- <tbody> -->
         <tr>
-          <td class="firstColumn" >Name</td>
+          <td class="firstColumn info" >Name</td>
           <td class="secondColumn">
             <input type="text" class="gwt-TextBox required" id="qr_name">
           </td>
@@ -95,13 +95,14 @@
                 <input type="text" class="gwt-TextBox" id="qr_memo">
               </td>
             </tr>
-            <!-- <tr>
-              <td class="firstColumn">Encoding</td>
-              <td class="secondColumn">
-                <%#= select_tag "gwt-ListBox","<option value='MECARD'>MECARD</option><option value='vCard'>vCard</option>".html_safe%>
-              </td>
-            </tr> -->
-          <!-- </tbody> -->
+            <tr>
+            <td class="firstColumn">Barcode size</td>
+            <td class="secondColumn">
+              <%= select_tag "bar_size","<option value='6'>select</option><option value='6'>Small</option><option value='8'>Medium</option><option value='10'>Large</option>".html_safe,:id=>"bar_size"%>
+              
+            </td>
+          </tr>
+            
         </table>
       </td>
     </tr>
@@ -114,13 +115,7 @@
           <colgroup><col class="firstColumn"><col class="secondColumn">
         </colgroup>
         <!-- <tbody> -->
-          <tr>
-            <td class="firstColumn">Barcode size</td>
-            <td class="secondColumn">
-              <%= select_tag "bar_size","<option value='6'>select</option><option value='6'>Small</option><option value='8'>Medium</option><option value='10'>Large</option>".html_safe,:id=>"bar_size"%>
-              
-            </td>
-          </tr>
+          
           
         <!-- </tbody> -->
       </table>
@@ -141,15 +136,15 @@
 </td>
 </tr>
 <!-- </tbody> -->
-</table></td><td align="left" style="vertical-align: top;">
+  </table></td><td align="left" style="vertical-align: top;">
   
-  <div id="qr_image" style="padding-left: 20px;">
-          <span id="LoadingImage" style="display: none">
-            <%= image_tag "loader.gif"%>
-          </span>
-  </div>  
+    <div id="qr_image" style="background:rgb(221, 227, 233); width: 400px; height: 300px; vertical-align: middle; padding-top: 45px;" align="center">
+      <!-- <span id="LoadingImage" style="display: none"> -->
+        <%#= image_tag "loader.gif"%>
+      <!-- </span> -->
+    </div>  
      
-    </table>
+  </table>
   </td>
 </tr>
 <!-- </tbody> -->
@@ -166,13 +161,13 @@
   
   var qr_data = " "
   if($("#qr_name").val()!= ""){ qr_data = qr_data + " " + "name:" + $("#qr_name").val()}
-  if($("#qr_phone").val()!= ""){ qr_data = qr_data + " ," + "phone:" + $("#qr_phone").val()}
-  if($("#qr_company").val()!= ""){ qr_data = qr_data + " ," + "company:" + $("#qr_company").val()}
-  if($("#qr_email").val()!= ""){ qr_data = qr_data + ", " + "Email:" + $("#qr_email").val()}
-  if($("#qr_title").val()!= ""){ qr_data = qr_data + ", " + "title:" + $("#qr_title").val()}
-  if($("#qr_memo").val()!= ""){ qr_data = qr_data + " ," + "memo:" + $("#qr_memo").val()}
-  if($("#qr_addr").val()!= ""){ qr_data = qr_data + ", " + "addr:" + $("#qr_addr").val()}
-  if($("#qr_addr2").val()!= ""){ qr_data = qr_data + ", " + "addr2:" + $("#qr_addr2").val()}
+  if($("#qr_phone").val()!= ""){ qr_data = qr_data + " " + "phone:" + $("#qr_phone").val()}
+  if($("#qr_company").val()!= ""){ qr_data = qr_data + " " + "company:" + $("#qr_company").val()}
+  if($("#qr_email").val()!= ""){ qr_data = qr_data + " " + "Email:" + $("#qr_email").val()}
+  if($("#qr_title").val()!= ""){ qr_data = qr_data + " " + "title:" + $("#qr_title").val()}
+  if($("#qr_memo").val()!= ""){ qr_data = qr_data + " " + "memo:" + $("#qr_memo").val()}
+  if($("#qr_addr").val()!= ""){ qr_data = qr_data + " " + "addr:" + $("#qr_addr").val()}
+  if($("#qr_addr2").val()!= ""){ qr_data = qr_data + " " + "addr2:" + $("#qr_addr2").val()}
   if($("#qr_site").val()!= ""){ qr_data = qr_data + " " + "web_site:" + $("#qr_site").val()}
 
   qr_data = { "qr_data": qr_data , "size": $("#bar_size").val()}  
@@ -190,7 +185,7 @@
   // if($("#qr_site").val()!= ""){ qr_data = qr_data +  $("#qr_site").val()}
 
   // qr_data = { "qr_data": qr_data , "size": $("#bar_size").val()}  
-  //$("#outerside").hide();
+  $("#qr_code").hide();
   $("#LoadingImage").show();
   $.ajax({
   url: 'generate_img',
@@ -198,7 +193,7 @@
   data: qr_data,
   success: function(data,event,xhr) {      
       $("#LoadingImage").hide();
-      //$("#outerside").show();
+      $("#qr_code").show();
   }
   });
   });

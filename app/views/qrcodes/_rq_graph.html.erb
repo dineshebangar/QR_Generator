@@ -1,11 +1,9 @@
-<style>
-/*.center {
-    margin: auto;
-     padding-left: 150px;
-}*/
-</style>
-<div style="width:<%=@size.to_i * 36%>px;background:rgb(221, 227, 233);padding-top: 12px;" id="outerside">
-  <div class="center" id="innerresult" style="width:250px;padding-left: 67px;padding-right: 45px;">
+<span id="LoadingImage" style="display: none">
+   <%= image_tag "loader.gif"%>
+</span>
+
+<div>
+  <div id="qr_code">
 	<%= render_qr_code(@qr_data,@size.to_i) %>
   </div>
 </div>

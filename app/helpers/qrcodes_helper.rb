@@ -19,7 +19,7 @@ module QrcodesHelper
     
     sizeStyle = "width: #{size_img}px; height: #{size_img}px;"
     #sizeStyle = "width: #{size}px; height: #{size}px;"
-    content_tag :table, class: "qrcode pull-right11" do
+    content_tag :table, class: "qrcode" do
       qr.modules.each_index do |x|
         concat(content_tag(:tr) do
           qr.modules.each_index do |y|
