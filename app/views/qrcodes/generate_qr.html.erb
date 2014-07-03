@@ -22,22 +22,15 @@
             <table id="leftpanel">
               <colgroup>
               <col></colgroup>
-              <tbody>
+              <!-- <tbody> -->
                 <tr>
                   <td>
-                    <table>
+                    <table style=" width: 361px;">
                       <colgroup>
                       <col class="firstColumn">
                       <col class="secondColumn">
                     </colgroup>
-                    <!-- <tbody> -->
-                      <!-- <tr> -->
-                        <!-- <td class="firstColumn">Contents</td>
-                        <td class="secondColumn">
-                          <%#= select_tag "list_box", "<option value='Calendar event'>Calendar event</option><option value='Contact information'>Contact information</option><option value='Email address'>Email address</option><option value='Geo location'>Geo location</option><option value='Phone number'>Phone number</option><option value='SMS'>SMS</option><option value='Text'>Text</option><option value='URL'>URL</option><option value='Wifi network'>Wifi network</option>".html_safe ,:id=>"list"%>
-                        </td> -->
-                      <!-- </tr> -->
-                    <!-- </tbody> -->
+                    
                   </table>
                 </td>
               </tr>
@@ -48,7 +41,7 @@
                     <col class="firstColumn">
                     <col class="secondColumn">
                   </colgroup>
-      <tbody>
+      <!-- <tbody> -->
         <tr>
           <td class="firstColumn" >Name</td>
           <td class="secondColumn">
@@ -108,7 +101,7 @@
                 <%#= select_tag "gwt-ListBox","<option value='MECARD'>MECARD</option><option value='vCard'>vCard</option>".html_safe%>
               </td>
             </tr> -->
-          </tbody>
+          <!-- </tbody> -->
         </table>
       </td>
     </tr>
@@ -120,7 +113,7 @@
         <table>
           <colgroup><col class="firstColumn"><col class="secondColumn">
         </colgroup>
-        <tbody>
+        <!-- <tbody> -->
           <tr>
             <td class="firstColumn">Barcode size</td>
             <td class="secondColumn">
@@ -128,57 +121,38 @@
               
             </td>
           </tr>
-          <!-- <tr>
-            <td class="firstColumn">Error correction</td>
-            <td class="secondColumn">
-              <select class="gwt-ListBox">
-                <option value="L">L</option>
-                <option value="M">M</option>
-                <option value="Q">Q</option>
-                <option value="H">H</option>
-              </select>
-            </td>
-          </tr> -->
-          <!-- <tr>
-            <td class="firstColumn">Character encoding</td>
-
-            <td class="secondColumn">
-              <select class="gwt-ListBox">
-                <option value="UTF-8">UTF-8</option>
-                <option value="ISO-8859-1">ISO-8859-1</option>
-                <option value="Shift_JIS">Shift_JIS</option>
-              </select>
-            </td>
-          </tr> -->
-        </tbody>
+          
+        <!-- </tbody> -->
       </table>
     </td>
   </tr>
   <tr>
     <td>
       <table><colgroup><col class="firstColumn"><col class="secondColumn"></colgroup>
-        <tbody>
+        <!-- <tbody> -->
           <tr>
             <td class="firstColumn">&nbsp;</td>
           <td class="secondColumn">
       <button type="button" class="gwt-Button" id="generate_img">Generate →</button>
     </td>
   </tr>
-</tbody>
+<!-- </tbody> -->
 </table>
 </td>
 </tr>
-</tbody>
+<!-- </tbody> -->
 </table></td><td align="left" style="vertical-align: top;">
   
   <div id="qr_image" style="padding-left: 20px;">
-
+          <span id="LoadingImage" style="display: none">
+            <%= image_tag "loader.gif"%>
+          </span>
   </div>  
      
     </table>
   </td>
 </tr>
-</tbody>
+<!-- </tbody> -->
 </table>
 </div>
 
@@ -216,14 +190,15 @@
   // if($("#qr_site").val()!= ""){ qr_data = qr_data +  $("#qr_site").val()}
 
   // qr_data = { "qr_data": qr_data , "size": $("#bar_size").val()}  
-
-
+  //$("#outerside").hide();
+  $("#LoadingImage").show();
   $.ajax({
   url: 'generate_img',
   type: 'get',
   data: qr_data,
   success: function(data,event,xhr) {      
-      
+      $("#LoadingImage").hide();
+      //$("#outerside").show();
   }
   });
   });

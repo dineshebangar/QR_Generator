@@ -1,13 +1,11 @@
 <style>
-.center {
+/*.center {
     margin: auto;
      padding-left: 150px;
-}
+}*/
 </style>
-
- 
-<div style="width:550px;background:rgb(221, 227, 233);">
-  <div class="center" id="innerresult" style="width:250px;padding-left: 80px;">
+<div style="width:<%=@size.to_i * 36%>px;background:rgb(221, 227, 233);padding-top: 12px;" id="outerside">
+  <div class="center" id="innerresult" style="width:250px;padding-left: 67px;padding-right: 45px;">
 	<%= render_qr_code(@qr_data,@size.to_i) %>
   </div>
 </div>
